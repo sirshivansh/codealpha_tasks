@@ -29,10 +29,9 @@ public class Main {
         students.add(s3);
 
         for (Student s: students) {
-            System.out.println(s.name);
-            System.out.println(s.marks);
+            System.out.println(s.name + ":" + s.marks);
         }
 
-//        System.out.println(students.size());
+        // System.out.println(students.size());
     }
 }
