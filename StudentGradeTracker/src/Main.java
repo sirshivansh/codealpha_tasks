@@ -17,8 +17,6 @@ public class Main {
         System.out.println("Enter number of students: ");
         int n = sc.nextInt();
 
-        System.out.println("\n========== STUDENT REPORT ==========");
-
         for (int i = 1; i <= n; i++) {
             System.out.println("Enter student name: ");
             String name = sc.next(); //.next() reads one word input
@@ -48,6 +46,10 @@ public class Main {
         students.add(s2);
         students.add(s3);*/
 
+        System.out.println("\n========== STUDENT REPORT ==========");
+        System.out.printf("%-20s %s%n", "Student Name", "Marks"); // %s = string, %-20s = left aligned, print string using 20 spaces
+        System.out.println("-----------------------------------");
+
         int sum = 0;
         int highest = students.get(0).marks;
         int lowest = students.get(0).marks;
@@ -55,7 +57,7 @@ public class Main {
         //creating total value
         // for ( datatype variable: dataset name)
         for (Student s: students) {
-            System.out.println(s.name + ":" + s.marks);
+            System.out.printf("%-20s %d%n", s.name, s.marks);
             sum = sum + s.marks;
 
             if (s.marks > highest) {
@@ -66,17 +68,19 @@ public class Main {
                 lowest = s.marks;
             }
         }
-        System.out.println(sum);
+        System.out.println("-----------------------------------");
+
+        System.out.println("Total Marks    : "+ sum);
 
         //creating average value
         double average = (double)sum/students.size();
-        System.out.printf("Average marks: %.2f%n",average);
+        System.out.printf("Average Marks  : %.2f%n",average);
 
         //output of highest value
-        System.out.println("Highest Value: "+ highest);
+        System.out.println("Highest Marks  : "+ highest);
 
         //output of lowest value
-        System.out.println("Lowest Value: " + lowest);
+        System.out.println("Lowest Marks   : " + lowest);
 
         // System.out.println(students.size());
     }
