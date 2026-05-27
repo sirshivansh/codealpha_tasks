@@ -39,7 +39,7 @@ public class Main {
 
         //creating average value
         double average = (double)sum/students.size();
-        System.out.println(average);
+        System.out.printf("Average marks: %.2f",average);
 
         // System.out.println(students.size());
     }
