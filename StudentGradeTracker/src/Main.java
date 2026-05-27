@@ -28,9 +28,18 @@ public class Main {
         students.add(s2);
         students.add(s3);
 
+        int sum = 0;
+
+        //creating total value
         for (Student s: students) {
             System.out.println(s.name + ":" + s.marks);
+            sum = sum + s.marks;
         }
+        System.out.println(sum);
+
+        //creating average value
+        double average = (double)sum/students.size();
+        System.out.println(average);
 
         // System.out.println(students.size());
     }
