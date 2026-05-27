@@ -29,17 +29,26 @@ public class Main {
         students.add(s3);
 
         int sum = 0;
+        int highest = students.get(0).marks;
 
         //creating total value
+        // for ( datatype variable: dataset name)
         for (Student s: students) {
             System.out.println(s.name + ":" + s.marks);
             sum = sum + s.marks;
+
+            if (s.marks > highest) {
+                highest = s.marks;
+            }
         }
         System.out.println(sum);
 
         //creating average value
         double average = (double)sum/students.size();
-        System.out.printf("Average marks: %.2f",average);
+        System.out.printf("Average marks: %.2f%n",average);
+
+        //output of highest value
+        System.out.println("Highest Value: "+ highest);
 
         // System.out.println(students.size());
     }
