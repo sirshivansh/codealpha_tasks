@@ -30,6 +30,7 @@ public class Main {
 
         int sum = 0;
         int highest = students.get(0).marks;
+        int lowest = students.get(0).marks;
 
         //creating total value
         // for ( datatype variable: dataset name)
@@ -40,6 +41,10 @@ public class Main {
             if (s.marks > highest) {
                 highest = s.marks;
             }
+
+            if (s.marks < lowest) {
+                lowest = s.marks;
+            }
         }
         System.out.println(sum);
 
@@ -49,6 +54,9 @@ public class Main {
 
         //output of highest value
         System.out.println("Highest Value: "+ highest);
+
+        //output of lowest value
+        System.out.println("Lowest Value: " + lowest);
 
         // System.out.println(students.size());
     }
