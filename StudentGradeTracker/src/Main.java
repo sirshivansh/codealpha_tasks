@@ -61,17 +61,41 @@ public class Main {
             System.out.println("4. Exit");
 
             System.out.println("Enter your choice: ");
-            int choice = sc.nextInt();
-
+            int choice = sc.nextInt(); // there is \n waiting in buffer.
+            sc.nextLine(); //It clears the leftover name form the buffer.
             switch(choice){
                 case 1:
-                    System.out.println("Add Student Selected");
+                    System.out.println("Enter student name: ");
+                    String name = sc.nextLine();
+                    System.out.println("Enter student marks: ");
+                    int marks = sc.nextInt();
+                    if(marks < 0 || marks > 100){
+                        System.out.println("Invalid marks! Marks should be between 0 and 100");
+                    }
+
+                    Student s = new Student(name, marks);
+
+                    students.add(s);
+
+                    System.out.println("Student Added successfully!");
                     break;
                 case 2:
-                    System.out.println("View Students Selected");
+                    System.out.println("\n =========== STUDENT LIST ===========");
+                    System.out.printf("%-20s %s%n", "Student Name", "Marks");
+                    System.out.println("---------------------------------------");
+                    if (students.isEmpty()) {
+                        System.out.println("No students available!");
+                        break;
+                    }
+                    displayStudents(students);
+                    System.out.println("---------------------------------------");
                     break;
                 case 3:
-                    System.out.println("Generate Report Selected");
+                    System.out.println("\n========== REPORT ==========");
+                    if(students.isEmpty()) {
+                        System.out.println("No students available!");
+                    }
+                    generateReport(students);
                     break;
                 case 4:
                     System.out.println("Exiting...");
@@ -81,8 +105,8 @@ public class Main {
             }
         }
 
-        System.out.println("Enter number of students: ");
-        int n = sc.nextInt();
+/*        System.out.println("Enter number of students: ");
+        int n = sc.nextInt();*/
 /*
 
         for (int i = 1; i <= n; i++) {
@@ -115,16 +139,17 @@ public class Main {
         students.add(s2);
         students.add(s3);*/
 
+/*
         System.out.println("\n========== STUDENT REPORT ==========");
         System.out.printf("%-20s %s%n", "Student Name", "Marks"); // %s = string, %-20s = left aligned, print string using 20 spaces
         System.out.println("-----------------------------------");
+*/
 
         //creating total value
         // for ( datatype variable: dataset name)
-        displayStudents(students);
-        generateReport(students);
+//        displayStudents(students);
+//        generateReport(students);
 
 
         // System.out.println(students.size());
-    }
 }
