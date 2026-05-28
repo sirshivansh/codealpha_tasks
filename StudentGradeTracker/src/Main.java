@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,6 +52,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
+
+        while(true){
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Add Student");
+            System.out.println("2. View Student");
+            System.out.println("3. Generate Report");
+            System.out.println("4. Exit");
+
+            System.out.println("Enter your choice: ");
+            int choice = sc.nextInt();
+        }
+
         System.out.println("Enter number of students: ");
         int n = sc.nextInt();
 
