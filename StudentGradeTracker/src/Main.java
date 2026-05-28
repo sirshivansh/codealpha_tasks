@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 class Student {
     String name;
@@ -34,7 +35,7 @@ public class Main {
                 lowest = s.marks;
             }
         }
-        System.out.println("-----------------------------------");
+        System.out.println("---------------------------------------");
 
         System.out.println("Total Marks    : " + sum);
 
@@ -49,12 +50,23 @@ public class Main {
         System.out.println("Lowest Marks   : " + lowest);
     }
 
+    public static void saveStudentsToFile(ArrayList<Student> students){
+        try{
+            FileWriter writer = new FileWriter("students.txt");
+            for (Student s : students){
+                writer.write(s.name + "," + s.marks + "\n");
+            } writer.close(); //.close() should come after loop ends.
+        } catch (IOException e){
+            System.out.println("Error saving the file!");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
 
         while (true) {
-            System.out.println("\n===== MENU =====");
+            System.out.println("\n========== MENU ==========");
             System.out.println("1. Add Student");
             System.out.println("2. View Student");
             System.out.println("3. Generate Report");
@@ -78,6 +90,7 @@ public class Main {
                     students.add(s);
 
                     System.out.println("Student Added successfully!");
+                    saveStudentsToFile(students);
                     break;
                 case 2:
                     System.out.println("\n =========== STUDENT LIST ===========");
@@ -91,7 +104,7 @@ public class Main {
                     System.out.println("---------------------------------------");
                     break;
                 case 3:
-                    System.out.println("\n========== REPORT ==========");
+                    System.out.println("\n =========== REPORT ===========");
                     if (students.isEmpty()) {
                         System.out.println("No students available!");
                     }
