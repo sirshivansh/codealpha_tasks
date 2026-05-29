@@ -255,6 +255,205 @@ Transitioned from building one-time execution scripts to designing stateful soft
     * survives across sessions
 
 ---
+### 20. Reading Data from Files
+
+Implemented data loading functionality using:
+
+```java
+BufferedReader
+FileReader
+```
+
+to reconstruct student records from a text file during application startup.
+
+#### Concepts Learned
+
+* Reading files line-by-line using:
+
+```java
+reader.readLine()
+```
+
+* Detecting end-of-file using:
+
+```java
+while ((line = reader.readLine()) != null)
+```
+
+* Parsing structured text data.
+
+---
+
+### 21. String Parsing and Data Reconstruction
+
+Learned how to convert stored text records back into Java objects.
+
+Example:
+
+```text
+Shivansh,99
+```
+
+was converted into:
+
+```java
+new Student("Shivansh", 99);
+```
+
+#### Concepts Learned
+
+* String splitting:
+
+```java
+line.split(",")
+```
+
+* Arrays returned by `split()`
+* Converting String values into integers using:
+
+```java
+Integer.parseInt()
+```
+
+* Reconstructing objects from external data sources
+
+---
+
+### 22. CRUD Application Development
+
+Expanded the project beyond simple data entry into a basic CRUD application.
+
+Implemented:
+
+| Operation | Feature             |
+| --------- | ------------------- |
+| Create    | Add Student         |
+| Read      | View Students       |
+| Delete    | Delete Student      |
+| Report    | Generate Statistics |
+
+#### Concepts Learned
+
+* User-driven data management
+* Data lifecycle management
+* Interactive software design
+
+---
+
+### 23. Delete Operations with ArrayList
+
+Implemented student deletion functionality.
+
+Used:
+
+```java
+students.remove(index);
+```
+
+#### Concepts Learned
+
+* Removing elements from collections
+* Understanding how collection size changes after deletion
+* Managing collection state after modifications
+
+---
+
+### 24. ArrayList Indexing
+
+Developed a deeper understanding of indexing systems.
+
+#### Concepts Learned
+
+Human numbering:
+
+```text
+1 2 3 4
+```
+
+ArrayList indexing:
+
+```text
+0 1 2 3
+```
+
+Implemented conversion using:
+
+```java
+int index = studentNumber - 1;
+```
+
+Learned how user-friendly numbering differs from internal program indexing.
+
+---
+
+### 25. Input Validation and Boundary Checking
+
+Improved robustness by validating user input before performing operations.
+
+Example:
+
+```java
+if (studentNumber < 1 || studentNumber > students.size())
+```
+
+#### Concepts Learned
+
+* Preventing invalid operations
+* Boundary checking
+* Defensive programming
+* Avoiding IndexOutOfBoundsException
+
+---
+
+### 26. Software Debugging and Error Analysis
+
+Encountered and resolved real-world runtime errors.
+
+Examples:
+
+* IndexOutOfBoundsException
+* Missing break statements in switch cases
+* Incorrect object access after deletion
+* File loading bugs
+* Scanner input issues
+
+#### Debugging Skills Learned
+
+* Reading exception stack traces
+* Tracing program execution flow
+* Identifying root causes
+* Testing edge cases
+
+---
+
+### 27. Persistent Data Management
+
+Completed a full persistence cycle:
+
+```text
+Add Student
+↓
+Save To File
+↓
+Exit Program
+↓
+Restart Program
+↓
+Load From File
+↓
+Continue Working
+```
+
+#### Concepts Learned
+
+* Data persistence
+* State management
+* Application lifecycle
+* Long-term storage of program data
+
+This transformed the project from a temporary runtime application into a persistent software system.
+
+---
 
 ## Final Project Architecture & Capabilities
 

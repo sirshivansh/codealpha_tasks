@@ -1,5 +1,3 @@
 Shivansh Mishra,99
 Jaya Mishra,100
 Vijaya Mishra,8
-Jaya,88
-Z,66
