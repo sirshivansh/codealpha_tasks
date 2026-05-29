@@ -81,6 +81,13 @@ public class Main {
         }
     }
 
+    public static void displayStudentWithmarks(ArrayList<Student> students){
+        for(int i=0; i < students.size(); i++){
+            Student s = students.get(i);
+            System.out.println("%d. %-20s %d%n", i+1, s.name, s.marks);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
