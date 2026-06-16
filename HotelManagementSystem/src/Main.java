@@ -107,7 +107,7 @@ public class Main {
         System.out.println("--------------------------------------------------");
         for (Room r : hotel.getRooms()) {
             String status = r.isAvailable() ? GREEN + "In Service" + RESET : RED + "Maintenance" + RESET;
-            System.out.printf("%-8d | %-12s | ₹%-10d | %-10s\n", 
+            System.out.printf("%-8d | %-12s | Rs %-9d | %-10s\n", 
                     r.getRoomNumber(), 
                     r.getRoomType().getDisplayName(), 
                     r.getPrice(), 
@@ -126,9 +126,9 @@ public class Main {
         String guestContact = readNonEmptyString("Enter Guest Contact Info (Phone/Email): ");
         
         System.out.println("\nSelect Room Category:");
-        System.out.println("1. Standard (₹1500/night)");
-        System.out.println("2. Deluxe (₹3500/night)");
-        System.out.println("3. Suite (₹7000/night)");
+        System.out.println("1. Standard (Rs 1500/night)");
+        System.out.println("2. Deluxe (Rs 3500/night)");
+        System.out.println("3. Suite (Rs 7000/night)");
         int typeChoice = readIntInput("Select room category (1-3): ", 1, 3);
         
         RoomType selectedType;
@@ -159,7 +159,7 @@ public class Main {
         // Show available rooms
         System.out.println("\n" + GREEN + "Available Rooms:" + RESET);
         for (Room r : availableRooms) {
-            System.out.println(" - Room #" + r.getRoomNumber() + " (₹" + r.getPrice() + "/night)");
+            System.out.println(" - Room #" + r.getRoomNumber() + " (Rs " + r.getPrice() + "/night)");
         }
 
         int roomNum = readIntInput("\nEnter Room Number to book: ");
@@ -193,7 +193,7 @@ public class Main {
         System.out.printf("│ Room Number  : %-33s │\n", "#" + roomNum + " (" + selectedType.getDisplayName() + ")");
         System.out.printf("│ Dates        : %s to %s        │\n", checkIn, checkOut);
         System.out.printf("│ Duration     : %-33s │\n", nights + " Night(s)");
-        System.out.printf("│ Total Amount : ₹%-32.2f │\n", totalCost);
+        System.out.printf("│ Total Amount : Rs %-30.2f │\n", totalCost);
         System.out.println(YELLOW + BOLD + "└──────────────────────────────────────────────────┘" + RESET);
 
         String confirm = readNonEmptyString("Confirm booking and proceed to payment simulation? (y/n): ");
@@ -225,7 +225,7 @@ public class Main {
         // Simulated processing delays (aesthetically pleasing loading flow)
         System.out.println("\n" + CYAN + "Connecting to Payment Gateway..." + RESET);
         delay(800);
-        System.out.println("Authorizing transaction of " + GREEN + "₹" + totalCost + RESET + " via " + paymentMethod + "...");
+        System.out.println("Authorizing transaction of " + GREEN + "Rs " + totalCost + RESET + " via " + paymentMethod + "...");
         delay(1200);
         System.out.println(GREEN + "✔ Payment Authorization SUCCESSFUL!" + RESET);
         
@@ -298,7 +298,7 @@ public class Main {
         System.out.println("Guest Contact   : " + res.getGuestContact());
         System.out.println("Room Number     : " + res.getRoomNumber());
         System.out.println("Stay Dates      : " + res.getCheckIn() + " to " + res.getCheckOut());
-        System.out.println("Total Paid      : ₹" + String.format("%.2f", res.getTotalAmount()));
+        System.out.println("Total Paid      : Rs " + String.format("%.2f", res.getTotalAmount()));
         System.out.println("Payment Status  : " + (res.isPaid() ? GREEN + "PAID" : RED + "PENDING") + RESET);
         System.out.println("Transaction Ref : " + res.getPaymentTransactionId());
         System.out.println("Booking Status  : " + (res.isCancelled() ? RED + "CANCELLED" : GREEN + "ACTIVE") + RESET);

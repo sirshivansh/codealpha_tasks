@@ -6,7 +6,7 @@ public class Room {
     // Private variables (encapsulation prevents direct modification from outside)
     private int roomNumber;
     private RoomType roomType;
-    private int price;             // Price per night in Indian Rupees (₹)
+    private int price;             // Price per night in Indian Rupees (Rs)
     private boolean isAvailable;   // Availability state (true = in service, false = maintenance)
 
     /**
@@ -52,11 +52,11 @@ public class Room {
 
     /**
      * toString() is overridden to print Room details cleanly in lists.
-     * Use Indian Rupee symbol (₹) for pricing.
+     * Use Indian Rupee symbol (Rs) for pricing.
      */
     @Override
     public String toString() {
-        return String.format("Room %-3d | %-8s | ₹%d/night | %s", 
+        return String.format("Room %-3d | %-8s | Rs %d/night | %s", 
             roomNumber, roomType.getDisplayName(), price, (isAvailable ? "Available" : "Occupied"));
     }
 }

@@ -1,6 +1,6 @@
 /**
  * RoomType is an Enum that represents the categories of rooms available.
- * Each category has a user-friendly display name and a price in Indian Rupees (₹).
+ * Each category has a user-friendly display name and a price in Indian Rupees (Rs).
  */
 public enum RoomType {
     // Categories with realistic Indian Rupee prices per night
@@ -9,7 +9,7 @@ public enum RoomType {
     SUITE("Suite", 7000);
 
     private final String displayName;
-    private final int price; // Price in INR (₹)
+    private final int price; // Price in INR (Rs)
 
     // Enum Constructor - called automatically when initializing constants above
     RoomType(String displayName, int price) {

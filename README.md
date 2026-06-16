@@ -9,7 +9,7 @@ Welcome to my repository for the CodeAlpha Software Development Internship! This
 ### 1. 🏨 Hotel Reservation System (`HotelManagementSystem/`)
 A premium, command-line hotel room search, booking, and management console application built using Java.
 - **Key Features**:
-  - Room categorization (Standard, Deluxe, Suite) with rates in Indian Rupees (₹).
+  - Room categorization (Standard, Deluxe, Suite) with rates in Indian Rupees (Rs).
   - Multi-guest scheduling with date-range checking to prevent double-booking.
   - Interactive payment simulation (Card, UPI, PayPal) and detailed booking invoices.
   - File-based persistence (CSV database for rooms and reservations).

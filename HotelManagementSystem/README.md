@@ -2,13 +2,13 @@
 
 A command-line based **Hotel Reservation System** developed in Java. The application is built using standard Object-Oriented Programming (OOP) design patterns and persists its data inside a local CSV database. 
 
-It is designed to be **highly readable for beginners** (using classic switch statements and standard control flows) and outputs all pricing details in **Indian Rupees (₹)**.
+It is designed to be **highly readable for beginners** (using classic switch statements and standard control flows) and outputs all pricing details in **Indian Rupees (Rs)**.
 
 ---
 
 ## Key Features
 
-- **Room Categories**: Supports Standard (₹1,500/night), Deluxe (₹3,500/night), and Suite (₹7,000/night) room types.
+- **Room Categories**: Supports Standard (Rs 1,500/night), Deluxe (Rs 3,500/night), and Suite (Rs 7,000/night) room types.
 - **Dynamic Search**: Search for available rooms within custom check-in and check-out dates.
 - **Overlap Prevention**: Includes date overlap algorithms to prevent double-booking the same room during intersecting dates.
 - **Interactive Booking Flow**: Prompts guest details, calculates total cost, and displays a clean invoice.

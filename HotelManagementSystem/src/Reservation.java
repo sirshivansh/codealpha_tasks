@@ -13,7 +13,7 @@ public class Reservation {
     private int roomNumber;
     private LocalDate checkIn;          // Check-in date (Year, Month, Day)
     private LocalDate checkOut;         // Check-out date (Year, Month, Day)
-    private double totalAmount;         // Total price in INR (₹)
+    private double totalAmount;         // Total price in INR (Rs)
     private boolean isPaid;             // Has payment been completed?
     private String paymentTransactionId;// Transaction ID from payment gateway
     private boolean isCancelled;        // Cancellation state
@@ -101,13 +101,13 @@ public class Reservation {
     }
 
     /**
-     * Formats details for printing. Uses the Indian Rupee symbol (₹) for pricing.
+     * Formats details for printing. Uses the Indian Rupee symbol (Rs) for pricing.
      */
     @Override
     public String toString() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String status = isCancelled ? "CANCELLED" : (isPaid ? "PAID" : "UNPAID");
-        return String.format("Res ID: %-8s | Room: %-3d | Guest: %-15s | Dates: %s to %s | Total: ₹%-7.2f | Status: %-9s | Txn: %s",
+        return String.format("Res ID: %-8s | Room: %-3d | Guest: %-15s | Dates: %s to %s | Total: Rs %-7.2f | Status: %-9s | Txn: %s",
                 reservationId, roomNumber, guestName, checkIn.format(dtf), checkOut.format(dtf), totalAmount, status, paymentTransactionId);
     }
 }
