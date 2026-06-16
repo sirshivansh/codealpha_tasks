@@ -47,7 +47,14 @@ Each project is self-contained and run via the command line. Ensure you have Jav
    ```bash
    cd StudentGradeTracker
    ```
-2. Compile and run the tracker entry point.
+2. Compile the source code:
+   ```bash
+   javac -d bin src/Main.java
+   ```
+3. Run the application:
+   ```bash
+   java -cp bin Main
+   ```
 
 ---
 
